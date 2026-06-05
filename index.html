@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculatrice</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f0f0f0;
+    }
+    .calculatrice {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    #resultat {
+      width: 100%;
+      height: 40px;
+      margin-bottom: 10px;
+      text-align: right;
+      padding: 5px;
+      font-size: 18px;
+    }
+    .boutons {
+      display: grid;
+      grid-template-columns: repeat(4, 60px);
+      gap: 10px;
+    }
+    button {
+      height: 40px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculatrice">
+    <input type="text" id="resultat" disabled>
+    <div class="boutons">
+      <button onclick="ajouter('7')">7</button>
+      <button onclick="ajouter('8')">8</button>
+      <button onclick="ajouter('9')">9</button>
+      <button onclick="ajouter('/')">/</button>
+
+      <button onclick="ajouter('4')">4</button>
+      <button onclick="ajouter('5')">5</button>
+      <button onclick="ajouter('6')">6</button>
+      <button onclick="ajouter('*')">*</button>
+
+      <button onclick="ajouter('1')">1</button>
+      <button onclick="ajouter('2')">2</button>
+      <button onclick="ajouter('3')">3</button>
+      <button onclick="ajouter('-')">-</button>
+
+      <button onclick="ajouter('0')">0</button>
+      <button onclick="ajouter('.')">.</button>
+      <button onclick="calculer()">=</button>
+      <button onclick="ajouter('+')">+</button>
+
+      <button onclick="effacer()" style="grid-column: span 4;">C</button>
+    </div>
+  </div>
+
+  <script>
+    function ajouter(val) {
+      document.getElementById("resultat").value += val;
+    }
+
+    function calculer() {
+      try {
+        document.getElementById("resultat").value = eval(document.getElementById("resultat").value);
+      } catch {
+        document.getElementById("resultat").value = "Erreur";
+      }
+    }
+
+    function effacer() {
+      document.getElementById("resultat").value = "";
+    }
+  </script>
+</body>
+</html>
