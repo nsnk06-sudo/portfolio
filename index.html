@@ -2,86 +2,141 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Calculatrice</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon Portfolio</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background: #f0f0f0;
+      margin: 0;
+      background: #f4f4f4;
+      color: #333;
     }
-    .calculatrice {
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+
+    header {
+      background: #222;
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
     }
-    #resultat {
-      width: 100%;
-      height: 40px;
-      margin-bottom: 10px;
-      text-align: right;
-      padding: 5px;
-      font-size: 18px;
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
     }
-    .boutons {
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    nav {
+      background: #444;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 3rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .projects {
       display: grid;
-      grid-template-columns: repeat(4, 60px);
-      gap: 10px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
     }
-    button {
-      height: 40px;
-      font-size: 18px;
-      cursor: pointer;
+
+    .project-card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .project-card img {
+      max-width: 100%;
+      border-radius: 5px;
+    }
+
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    footer a {
+      color: #00aced;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
-  <div class="calculatrice">
-    <input type="text" id="resultat" disabled>
-    <div class="boutons">
-      <button onclick="ajouter('7')">7</button>
-      <button onclick="ajouter('8')">8</button>
-      <button onclick="ajouter('9')">9</button>
-      <button onclick="ajouter('/')">/</button>
 
-      <button onclick="ajouter('4')">4</button>
-      <button onclick="ajouter('5')">5</button>
-      <button onclick="ajouter('6')">6</button>
-      <button onclick="ajouter('*')">*</button>
+  <header>
+    <h1>Ton Nom</h1>
+    <p>Développeur Web | Designer | Créatif</p>
+  </header>
 
-      <button onclick="ajouter('1')">1</button>
-      <button onclick="ajouter('2')">2</button>
-      <button onclick="ajouter('3')">3</button>
-      <button onclick="ajouter('-')">-</button>
+  <nav>
+    <a href="#about">À propos</a>
+    <a href="#projects">Projets</a>
+    <a href="#skills">Compétences</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <section id="about">
+    <h2>À propos</h2>
+    <p>Je suis passionné par la création de solutions numériques modernes et élégantes. Mon objectif est de transformer les idées en expériences visuelles uniques.</p>
+  </section>
 
-      <button onclick="ajouter('0')">0</button>
-      <button onclick="ajouter('.')">.</button>
-      <button onclick="calculer()">=</button>
-      <button onclick="ajouter('+')">+</button>
-
-      <button onclick="effacer()" style="grid-column: span 4;">C</button>
+  <section id="projects">
+    <h2>Projets</h2>
+    <div class="projects">
+      <div class="project-card">
+        <img src="https://via.placeholder.com/300x200" alt="Projet 1">
+        <h3>Projet 1</h3>
+        <p><a href="calculatrice.html">Voir le projet.</a></p>
+      </div>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/300x200" alt="Projet 2">
+        <h3>Projet 2</h3>
+        <p>Description rapide du projet.</p>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <script>
-    function ajouter(val) {
-      document.getElementById("resultat").value += val;
-    }
+  <section id="skills">
+    <h2>Compétences</h2>
+    <ul>
+      <li>HTML / CSS / JavaScript</li>
+      <li>Design graphique (Photoshop, Illustrator)</li>
+      <li<a href="calculatrice.html"></a>
+      <li>Gestion de projet</li>
+    </ul>
+  </section>
 
-    function calculer() {
-      try {
-        document.getElementById("resultat").value = eval(document.getElementById("resultat").value);
-      } catch {
-        document.getElementById("resultat").value = "Erreur";
-      }
-    }
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email : <a href="mailto:tonemail@example.com">nsnk06@gmail.com</p>
+    <p>LinkedIn : <a href="#">Ton LinkedIn</a></p>
+    <p>Téléphone :680392055</p>
+  </section>
 
-    function effacer() {
-      document.getElementById("resultat").value = "";
-    }
-  </script>
+  <footer>
+    <p>&copy; 2026 KEOU STEPHANE - Portfolio</p>
+  </footer>
+
 </body>
 </html>
+
+
